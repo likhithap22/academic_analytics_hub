@@ -1,0 +1,147 @@
+/* ---------------- Background Animation ---------------- */
+.gradient-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(130deg, #6a11cb, #2575fc, #ff4d8d, #ffca28);
+  background-size: 300% 300%;
+  animation: moveGradient 8s ease infinite;
+  z-index: -2;
+  filter: blur(4px);
+}
+
+@keyframes moveGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ---------------- Wrapper ---------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* ---------------- Glass Card ---------------- */
+.login-card {
+  background: rgba(255, 255, 255, 0.14);
+  padding: 40px 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease;
+  text-align: center;
+  color: #fff;
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ---------------- Logo ---------------- */
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(255,255,255,0.4);
+  margin-bottom: 5px;
+}
+
+.tagline {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* ---------------- Inputs ---------------- */
+.input-field {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px 12px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.input-field input:focus {
+  background: rgba(255,255,255,0.25);
+}
+
+.input-field label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #eee;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-field input:focus + label,
+.input-field input:valid + label {
+  top: -10px;
+  left: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: #ffca28;
+  transition: 0.4s;
+}
+
+.input-field input:focus ~ .focus-border {
+  width: 100%;
+}
+
+/* ---------------- Button ---------------- */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #ffca28, #ff4d8d);
+  cursor: pointer;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-3px);
+}
+
+.footer-note {
+  margin-top: 15px;
+  font-size: 13px;
+  opacity: 0.85;
+}

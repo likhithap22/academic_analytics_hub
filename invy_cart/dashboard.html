@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>InvyCart — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="glass-header">
+    <h1 id="welcomeText">Welcome, User 👋</h1>
+
+    <div class="header-right">
+      <!-- Theme selector -->
+      <select id="themeSelector" class="theme-select" aria-label="Theme selector">
+        <option value="light">🌞 Light</option>
+        <option value="dark">🌙 Dark</option>
+        <option value="neon">⚡️ Neon Blue</option>
+        <option value="purple">💜 Purple Glow</option>
+        <option value="glass">🧊 Frost Glass</option>
+        <option value="sunset">🌅 Sunset Warm</option>
+      </select>
+
+      <button id="logoutBtn" class="hdr-btn">Logout</button>
+
+      <!-- Profile in header -->
+      <img id="headerProfilePic"
+           src="https://i.ibb.co/s9QZxCJ/default-user.png"
+           alt="Profile"
+           class="header-profile" />
+    </div>
+  </header>
+
+  <!-- DEAL BOX (premium) -->
+  <section id="deal-box" class="glass-box deal-box">
+    <h3>🔥 Today's Best Deals</h3>
+    <div id="dealContainer" class="deal-container" role="button" tabindex="0">
+      <img id="dealLogo" class="deal-logo" src="" alt="logo" />
+      <p id="dealText">Loading deals...</p>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <div class="search-wrapper">
+    <input id="searchStores" type="search" placeholder="🔍 Search stores..." />
+  </div>
+
+  <!-- STORE GRID -->
+  <main class="grid-container" aria-live="polite"></main>
+
+  <!-- ADD / EDIT STORE -->
+  <section class="add-store glass-box" aria-labelledby="add-store-heading">
+    <h3 id="add-store-heading">Add / Edit Store</h3>
+    <div class="input-row">
+      <input id="storeName" type="text" placeholder="Store Name" />
+      <input id="storeLink" type="url" placeholder="Store Link (https://)" />
+      <input id="storeLogo" type="url" placeholder="Store Logo URL (optional)" />
+    </div>
+    <button id="addStoreBtn" class="add-btn">+ Add Store</button>
+  </section>
+
+  <!-- CHATBOT -->
+  <div id="chatbot" class="glass-chat" aria-live="polite">
+    <div id="chat-header">
+      <span>Nani 🤖</span>
+      <button id="chatToggle" aria-label="Minimize chat">−</button>
+    </div>
+
+    <div id="chat-body"></div>
+
+    <div id="chat-input">
+      <input id="userMsg" type="text" placeholder="Ask me something..." aria-label="Chat message" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- PROFILE PANEL (slide-out) -->
+  <aside id="profilePanel" aria-hidden="true">
+    <div class="panel-header">
+      <h2>My Profile</h2>
+      <button id="closeProfile" aria-label="Close profile">×</button>
+    </div>
+
+    <div class="panel-body">
+      <img id="profileLargePic" src="https://i.ibb.co/s9QZxCJ/default-user.png" alt="Profile large" />
+      <h3 id="profileName">User</h3>
+
+      <button id="changePhotoBtn" class="change-photo">Change Photo</button>
+      <input id="photoInput" type="file" accept="image/*" style="display:none" />
+
+      <hr />
+
+      <button id="logoutBtn2" class="logout-red">Logout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
